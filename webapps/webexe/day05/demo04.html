@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--title标题,meta元信息,style样式,script脚本 -->
+<meta charset="UTF-8">
+<title>电脑图片</title>
+<style type="text/css">
+#father {
+	background-position: relative;
+	border: 1px solid yellow;
+	width: 1000px;
+	height: 619px;
+	margin: 0px auto;
+	overflow: hidden; /*解决粘连问题*/
+}
+
+#left {
+	float: left; /*脱离文档流*/
+	background-image: url("../images/itemCat/study_computer_img1.png");
+	width: 611px;
+	height: 376px;
+	background-repeat: no-repeat;
+	background-size: 318px 319px;
+	background-position: 90% top; /*在右上角，第一个参数为左右调整，下一个参数为上下调整*/
+	background-color: #E8E8E8;
+	width: 611px;
+	height: 376px;
+	background-repeat: no-repeat;
+	background-size: 318px 319px;
+	background-position: 90% top;
+	/*在右上角，第一个参数为左右调整，下一个参数为上下调整*/
+	background-color: #E8E8E8;
+	margin-top: 100px;
+}
+
+.left_pro {
+	width: 245px;
+	height: 232px;
+	padding: 5px;
+	margin-top: 68px;
+	margin-left: 36px;
+}
+
+.top_ys1 {
+	color: #333333;
+	font-weight: lighter;
+	font-size: 32px;
+	margin-bottom: 12px;
+}
+
+.top_ys2 {
+	color: #333333;
+	font-size: 12px;
+	margin-bottom: 24px;
+	font-weight: lighter;
+}
+
+.top_ys3 {
+	color: #0AA1ED;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+.top_ys4 {
+	width: 132px;
+	height: 40px;
+	border: 2px solid #ddd;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #0aa1ed;
+	border-radius: 2px;
+}
+
+#right {
+	float: right;
+	width: 375px;
+	height: 376px;
+	border: 1px solid yellow;
+	background-image: url("../images/itemCat/study_computer_img2.png");
+	background-repeat: no-repeat;
+	background-position: 80% 80%;
+	background-color: #E8E8E8;
+	background-size: 292px 232px;
+	overflow: hidden;
+	margin-top: 100px;
+	overflow: hidden;
+}
+
+#rightsmall {
+	margin: 39px 0 0 25px;
+}
+
+#right_1 {
+	color: #333;
+	font-weight: lighter;
+	font-size: 32px;
+	margin-bottom: 12px;
+}
+
+#right_2 {
+	font-weight: lighter;
+	margin-bottom: 24px;
+	font-size: 12px;
+}
+
+#right_3 {
+	font-weight: bold;
+	font-size: 24px;
+	color: #0AA1ED;
+	margin-bottom: 20px;
+}
+
+#right_4 {
+	border: 1px solid #ddd;
+	text-align: center;
+	line-height: 40px;
+	width: 132px;
+	height: 40px;
+	background-color: #0AA1ED;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+</style>
+
+</head>
+
+
+<body>
+	<div id="father">
+		<div id="left">
+			<div class="left_pro">
+				<p class="top_ys1">灵越 燃7000系列</p>
+				<p class="top_ys2">
+					酷睿双核i5处理器|256GB SSD|8GB内存 <br>英特尔HD显卡620含共享显卡内存
+				</p>
+				<p class="top_ys3">￥4999.00</p>
+				<p class="top_ys4">
+					<a href="../../web/web/product_details.html">查看详情</a>
+				</p>
+			</div>
+		</div>
+		<div id="right">
+			<!-- 将两个div横向排列 -->
+			<div id="rightsmall">
+				<p id="right_1">颜值 框不住</p>
+				<p id="right_2">
+					酷睿双核i5处理器|256GB SSD|8GB内存<br> 英特尔HD显卡620含共享显卡内存
+				</p>
+				<p id="right_3">￥6888.00</p>
+				<p id="right_4">
+					<a href="#">查看详情</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

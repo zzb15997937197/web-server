@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>map</title>
+</head>
+<body>
+	<!-- 图片的局部点击跳转需要两个标签，一个为img标签和一个map标签
+在map标签里面定义一个are标签，设置区域shape="rect"，在area里面用href属性链接到
+指定的资源文件(图片，页面或者其他的资源文件)href="regist.png"-->
+	<img src="a.jpg" usemap="mymap">
+
+	<map name="mymap" id="mymap">
+	<!-- area常用属性 shape:rect,circle,coords:"x1,y1,x2,y2" 圆形:"x,y,r(半径)" href:值为
+	一个路径，如果浏览器可以打开指定路径的资源就打开，如果不能打开，就下载该资源-->
+		<area shape="rect" coords="500,200,600,300" href="regist.png">
+	</map>
+	<!-- href:值为路径，可以写相对路径和绝对路径，路径可以指向页面，也可以指向文件，如果浏览器
+	支持打开此格式的文件则直接浏览（图片，pdf等）如果不支持打开则下载此文件 -->
+
+</body>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+</html>

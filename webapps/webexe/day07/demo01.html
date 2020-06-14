@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+  
+  function fn(){
+	  var div=document.getElementById("d1");
+	  for(var i=1;i<10;i++){
+		  /*奇数块为blue，偶数为red*/
+		
+		 /*  if(i%2==0){
+		    div.innerHTML+="<div class='red'></div>";
+		  }else{
+			  div.innerHTML+="<div class='blue'></div>";
+		  } */
+		  var color=i%2==0?"red":"blue";
+		  div.innerHTML+="<div class='"+color+"'></div>"
+	}
+}
+</script>
+
+<style type="text/css">
+
+#d1{	
+width:320px;
+height:320px;
+border:2px solid red;
+
+
+}
+.red{
+background-color: red;
+ width:100px;
+ height:100px;
+ border:2px solid red;
+ float:left;
+
+}
+.blue{
+background-color:blue;
+ width:100px;
+ height:100px;
+border:2px solid red;
+ float:left;
+}
+
+</style>
+  
+  
+</head>
+<body>
+ 
+
+  <input type="button" value="添加" onclick="fn()">
+  <br>
+  <div id="d1">
+  </div>
+
+</body>
+</html>

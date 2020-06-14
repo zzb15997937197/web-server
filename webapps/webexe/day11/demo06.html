@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var w = 0;
+	var h = 0;
+	//用于统计成功和失败的次数
+	var successCount=0;
+	var failCount=0;
+
+	onload = function(){
+		changeSize();
+	}
+	onresize = function(){
+		changeSize();
+	}
+	function changeSize(){
+		w = document.body.parentElement.clientWidth;
+		h = document.body.parentElement.clientHeight;
+		document.body.parentElement.style.backgroundSize=w+"px "+h+"px";
+	}
+	/* 开启添加图片的定时器 */
+	var t1 = setInterval(function(){
+		var img = document.createElement("img");
+		img.src = "zombimgs/zomb0.png";
+		document.body.appendChild(img);
+		//设置图片在窗口的最右侧出现
+		img.style.left = w-80+"px";
+		img.style.top = 
+				Math.floor(Math.random()*(h-100))+"px";
+		//给图片添加鼠标移入事件
+		img.onmouseover = function(){
+			document.body.removeChild(img);
+			successCount++;
+			sh3.innerText = "成功次数："+successCount; 
+		}
+	},100);
+	//创建移动图片的定时器
+	var t2 = setInterval(function(){
+		//得到所有的img
+		var imgs = document.getElementsByTagName("img");
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			//得到原来的值
+			var oldLeft = parseInt(img.style.left);
+			oldLeft-=5;
+			//判断僵尸移出页面时删除
+			if(oldLeft<=0){
+				document.body.removeChild(img);
+				//统计失败次数
+				failCount++;
+				fh3.innerText = "失败次数："+failCount;
+			}
+			img.style.left=oldLeft+"px";
+		}
+	},10);
+	
+</script>
+<style type="text/css">
+	img{
+		width: 80px;
+		height: 100px;
+		position: absolute;
+	}
+	html{
+		background-image: url("zombimgs/PVZBackground_3.jpg");
+	}
+	#sh3{
+		float: left;
+		color: yellow;
+		background-color: black;
+	}
+	#fh3{
+		float: right;
+		color: yellow;
+		background-color: black;
+	}
+</style>
+</head>
+<body>
+<h3 id="sh3">成功次数：0</h3> 
+<h3 id="fh3">失败次数：0</h3>
+
+</body>
+</html>
+
+

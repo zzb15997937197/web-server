@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简易计算器</title>
+
+<script type="text/javascript">
+    /* 
+     * 
+     1、实现简易计算器
+     2、99后面可以输入任意数
+     3、9*后面只能输入1-9
+     4、9*9后面可以输入任意数
+    
+     *
+     */
+    function fn() {
+    	var input=document.getElementById("ip1");
+        var s=0;
+        //给父元素div加上onclick="fn()"，然后判断事件源的nodeName是否等于INPUT
+        if(event.target.nodeName=="INPUT"){
+             s=event.target.value;//获取到对应的事件源的值
+          if (s == "c") {
+            ip1.value = "";
+        } else if(s==input.value){
+        	ip1.value=s;
+        }else if (s == "=") {
+            //计算
+            ip1.value = eval(ip1.value);
+        } else {
+            //如果计算器文本框 
+            //将文本框最后的给取出来，如果取到"+","-","*","/"
+            //取出最后一个符号
+            var reg = /^\d$/;//匹配所有数字
+            if (ip1.value.length >= 1) {
+                var last_1 = ip1.value.substring(ip1.value.length - 1);
+                var last_2 = ip1.value.substring(ip1.value.length - 2,
+                        ip1.value.length - 1);
+                console.log("last_1:" + last_1 + "last_2:" + last_2);
+                if (!isNaN(last_2) && isNaN(last_1)) {
+                    //9*
+                    if (reg.test(s)) {
+                        ip1.value += s;
+                    }
+                }else {
+                    ip1.value += s;
+                }
+            } else {
+                console.log("ip1.value.length:" + ip1.value.length);
+                if ((reg.test(s)) + (ip1.value.length == 0) == 2) {
+                    //第一个数如果输入的数是0-9，并且长度为0的时候
+                    ip1.value += s;
+                } else {
+                    if (s == "-" || s == "+") {
+                        //第一个数为负号
+                        ip1.value += s;
+                    }
+                }
+            }
+         }
+        }
+    }
+    function equal() {
+        var last = ip1.value.substring(ip1.value.length - 1);
+        if (isNaN(last)) {
+            //最后一个字符不是数,判断是否
+            console.log("last:" + last);
+            //只能替换第一个，怎么标记第一个和最后一个,怎么替换最后一个符号
+            var s1 = ip1.value.substring(0, ip1.value.lastIndexOf(last));
+            //取出第一个到最后一个符号之间的数，然后将该数赋值给ip1.value
+            ip1.value = s1;
+            console.log(ip1.value);
+        }
+        var result = eval(ip1.value);
+        ip1.value = result;
+    }
+</script>
+
+<style type="text/css">
+#panel {
+    margin: 0 auto;
+    width: 225px;
+    height: 300px;
+    text-align: center;
+    border:2px solid #0ff;
+}
+
+#ip1 {
+    width: 155px;
+    height: 45px;
+    color: #c0c;
+}
+
+#d1, #d2, #d3, #d4, #d5 {
+    width: 215px;
+    height: 55px;
+    margin: 5px 5px;
+}
+
+input {
+    width: 50px;
+    height: 50px;
+    background-color: #eff;
+}
+</style>
+
+
+</head>
+<body>
+
+    <!-- 
+   1、实现简易计算器
+   2、99后面可以输入任意数
+   3、9*后面只能输入1-9
+   4、9*9后面可以输入任意数
+    -->
+  <div id="panel" onclick="fn()">
+  <!-- 事件冒泡 -->
+        <div id="d1">
+            <input type="text" placeholder="0" id="ip1" readonly="readonly">
+            <input type="button" value="c" >
+        </div>
+        <div id="d2">
+            <input type="button" value="7" > 
+            <input type="button" value="8" > 
+            <input type="button" value="9" >
+           <input type="button" value="/" >
+        </div>
+        <div id="d3">
+            <input type="button" value="4" > 
+            <input type="button" value="5" >
+           <input type="button" value="6" > 
+           <input type="button" value="*" >
+        </div>
+        <div id="d4">
+            <input type="button" value="1" >
+           <input type="button" value="2" > 
+           <input type="button" value="3" > 
+           <input type="button" value="-" >
+        </div>
+        <div id="d5">
+            <input type="button" value="0" > 
+            <input type="button" value="." >
+           <input type="button" value="=" onclick="equal()"> 
+           <input type="button" value="+" >
+        </div>
+  </div>
+
+
+</body>
+</html>

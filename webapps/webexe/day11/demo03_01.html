@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>键盘监听事件</title>
+
+<script type="text/javascript" src="../jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+ 
+
+  function keydown(){
+	  if(event.keyCode==13){
+		  console.log(event.keyCode+"键盘的回车键按下了！:"+String.fromCharCode(event.keyCode));
+		  //获取回车键对应的字符编码
+	  }
+ }
+  function keyup(){
+	  if(event.keyCode==13){
+		  console.log("键盘的回车键弹起来了！");
+		  
+	  }
+  }
+ 
+</script>
+
+</head>
+<body>
+
+  <!-- 
+   需求：在文本框输入内容，按下回车键，弹出登录成功的对话框！
+   1、准备一个文本框
+   2、在文本框添加键盘事件
+   3、判断从文本框里获取到的内容的值是否等于回车键对应的值的字符编码
+   -->
+   
+   <input type="text" id="text1" onkeydown="keydown()" onkeyup="keyup()">
+
+
+</body>
+</html>

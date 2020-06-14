@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul>li>ul{
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	
+
+	function myfn(){
+		var obj=event.target;//获取事件源
+		if(obj.className=="title"){
+			//获取到所有的对象的类名为title的对象
+		//得到所有的第二层的ul
+		var lis = document.getElementsByClassName("title");
+		for(var i=0;i<lis.length;i++){
+			var li = lis[i];
+			//找到不是点击的li,将点击对象不是li的其他分组关闭
+			if(obj!=li){
+				var ul = li.getElementsByTagName("ul")[0];
+				ul.style.display="none";
+			}
+		}
+		
+		var ul = obj.getElementsByTagName("ul")[0];//获取obj对象所有的ul标签
+		//因为通过js代码操作的样式为内联样式，第一次虽然元素隐藏
+		//但是隐藏样式并非内联 所以取出的内联样式display为空字符串
+		//
+		if(ul.style.display=="none"||ul.style.display==""){//隐藏
+			//让其显示
+			ul.style.display="block";
+		}else{//显示
+			ul.style.display="none";
+		}
+	 }
+	}
+</script>
+</head>
+<body>
+  <ul onclick="myfn()">
+	<li id="myli" class="title" >美女好友
+		<ul>
+			<li>貂蝉</li>
+			<li>苍老师</li>
+			<li>西施</li>
+		</ul>
+	</li>
+	<li class="title" >工作好友
+		<ul>
+			<li>杰克马</li>
+			<li>李彦宏</li>
+			<li>马化腾</li>
+		</ul>
+	</li>
+	<li class="title" >亲朋好友
+		<ul>
+			<li>习大大</li>
+			<li>老干妈</li>
+			<li>凤姐</li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

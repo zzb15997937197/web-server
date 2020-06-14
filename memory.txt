@@ -1,0 +1,19 @@
+
+
+1、客户端给服务器发送请求时，是根据在地址栏中的url，服务器寻找对应的资源
+如果资源存在的话，服务器就会用流的形式将资源传给客户端。客户端浏览器就会
+根据协议来翻译传过来的源代码资源。一但发现源代码里面的资源没有客户端会再次
+请求服务器进行对应资源的请求。
+2、发送响应头的时候，我们要注意Content-Type:text/html这个地方不能写死。
+我们用两个map来分别存取，响应头、响应类型与要解析的文件类型之间的对应关系。
+分别用Map<String,String>headers=new HashMap<String,String>();
+       key:value
+    Content-Type:text/html
+    Content-Length:文件的长度
+    Map<String,String> MimeMapping=new HashMap<String,String>();
+       key:value
+       .html:text/html
+       .css:text/css
+       .png:image/png
+       .jpg:image/jpeg
+       .js:application/js

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>中华大选秀</title>
+
+<style type="text/css">
+
+/* #d1{
+ 
+ width:1000px;
+ height:1000px;
+}
+*{
+  padding:0;
+  margin:0;
+}
+#uls{
+  width:800px;
+  height:500px;
+  overflow:hidden;
+  margin:100px 0 0 300px;
+  
+}
+
+li{
+  padding:40px;
+  list-style-type:none;
+  width:150px;
+  height:50px;
+  float:left;
+  border:1px solid #eee;
+  text-align:center;
+
+}
+
+#btn1,#btn2{
+    text-align:center;
+     border:0;
+     width:60px;
+     line-height: 50px;
+
+} */
+       #d1{
+        width:1380px;
+        height:800px;
+       
+       }
+
+      *{
+			padding: 0;
+			margin: 0;
+		}
+		#uls{
+		    
+			width: 500px;
+			height: 500px;
+			margin: 30px 0 0 450px;
+		}
+		li{
+			width: 150px;
+			height: 150px;
+			background: skyblue;
+			float: left;
+			list-style: none;
+			margin:5px;
+			color: #fff;
+			text-align: center;
+			line-height: 150px;/*通过设置行高来调整字的位置*/
+			font-size: 20px;
+			font-weight: bold;
+		}
+		#uls li button{
+			width: 50px;
+			height: 30px;
+		}
+		.light{
+			width: 150px;
+			height: 150px;
+			background: #f0f;
+			color: #ff0;
+
+
+
+</style>
+
+<script type="text/javascript">
+
+
+
+
+var num=0;  //定义初识下标
+var time;
+function start(){
+	var btn1=document.getElementById("btn1");
+	var btn2=document.getElementById("btn2");
+	var arr=[0,1,2,5,8,7,6,3];//按这个下标依次旋转
+	var lis=document.getElementsByTagName("li");
+	btn1.disabled=true;
+	time=setInterval(function(){
+		lis[arr[num]].className="";
+		num++;
+		if(num>7){
+			num=0;
+		}
+		lis[arr[num]].className="light";
+	},30)
+	
+}
+
+function stop(){
+	btn1.disabled=false;
+	clearInterval(time);	
+}
+</script>
+
+</head>
+<body>
+
+<!-- 
+  制作跑马灯步骤
+  1、自定义无序列表，并去掉无序列表的标识
+  2、点击开始按钮，转盘开始启动从第一个位置开始转动
+  3、点击停止按钮，转盘就会停止转动
+
+ -->
+ 
+ <div id="d1">
+ <center><h1>最美猪猪</h1></center>
+ <ul id="uls">
+        <li value="0">易雪莲</li>
+		<li value="1">易雪莲</li>
+		<li value="2">易雪莲</li>
+		<li value="5">易雪莲</li>
+		<li><button id='btn1' onclick="start()">开始</button> 
+		   <button id='btn2' onclick="stop()">停止</button></li>
+		<li value="8">易雪莲</li>
+		<li value="7">易雪莲</li>
+		<li value="6">易雪莲</li>
+		<li value="3">易雪莲</li>
+
+   </ul>
+ </div>
+
+</body>
+</html>

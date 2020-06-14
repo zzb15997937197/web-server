@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #div{
+            width: 100px;height: 100px;background-color: #ff0000;position: absolute;
+            border-radius: 50%;         /* 生成一个球形  */
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var div = document.getElementById('div');  // 获取小球
+            var btn = document.getElementById('btn');
+            var bt1 =document.getElementById('bt1');
+            btn.onclick = function(){   //点击按钮开始运动
+            	btn.disabled=true;
+                bt1.disabled=false;
+                startMove(div);
+            }
+            bt1.onclick=function(){
+            	bt1.disabled=true;
+            	stopMove(div);
+            }
+           
+       }
+       
+        var speedX = 5;     //  横向速度
+        var speedY = 8;     //  纵向速度
+        var timer = null;   //  创建一个定时器
+        function startMove(obj){  // 传入 运动物品
+            clearInterval(obj.timer);   // 运动之前 清除定时器
+            obj.timer = setInterval(function(){
+                var l = obj.offsetLeft + speedX;  // 横向运动距离
+                var t = obj.offsetTop + speedY;   // 纵向运动距离
+                if( t >= document.documentElement.clientHeight - obj.offsetHeight){
+                    //  判断 纵向运动的距离 如果大于 可视区高度-物体的高度
+                    speedY *= -1;  // 设置纵向速度 为负数 反向运动  （相当于回弹）
+                    t = document.documentElement.clientHeight - obj.offsetHeight;
+                    // 设置纵向运动距离最大 为可视区高度-物体的高度  防止越界
+                }else if( t < 0 ){   // 小球默认距离是在左上方  向下走 speedX >0  向上speed <0
+                    speedY *= -1;  // 当小球从 最下面运动到最上面  再次把速度设置为正数 回弹
+                    t=0;  // 防止越界
+                }
+                //  横向运动与 纵向运动 一样
+                if( l >= document.documentElement.clientWidth - obj.offsetWidth){
+                    speedX *= -1;
+                    l = document.documentElement.clientWidth - obj.offsetWidth;
+                }else if( l < 0 ){
+                    speedX *= -1;
+                    l=0;
+                }
+                //开始运动
+                obj.style.left = l  + 'px';
+                obj.style.top = t  + 'px';
+          },10);
+        }
+        
+        
+        function stopMove(div){
+        	 btn.disabled=false;
+        	clearInterval(div.timer);
+        }
+      
+    </script>
+</head>
+<body>
+<button type="button" id="btn">开始运动</button>
+ <input type="button" id="bt1" value="停止" >
+<div id="div"></div>
+</body>
+</html>

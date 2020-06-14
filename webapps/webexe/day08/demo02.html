@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+ var arr=[23,15,5,101,8,47];
+ 
+ //声明自定义排序函数
+ function mysort(a,b){
+	 return a-b;
+}
+ arr.sort(mysort);
+ //如果数组中保存的是对象的话，通过一下方式进行排序
+ /*
+  var person=[p1,p2,p3,p4];//四个对象，按照对象的年龄进行排序 
+ 
+  function mysort(a,b){
+	  return a.age-b.age;//升序，相邻两个对象的年龄进行比较
+  }
+  person.sort(mysort);
+ */
+ 
+ alert(arr);
+</script>
+
+</head>
+
+<body>
+
+  
+  <input type="button">
+</body>
+</html>

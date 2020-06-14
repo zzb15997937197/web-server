@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+  <!-- connectionTimeout 当建立一个连接后，如果一直没有收到客户端的，也没有数据过来
+  那么此连接释放的时候，也必须等到20秒才能被超时释放 -->
+   <Connector 
+   connectionTimeout="10000" 
+   port="8088"
+   protocol="HTTP/1.1" 
+   redirectPort="8443"
+   maxThreads="150"
+   />
+</server>

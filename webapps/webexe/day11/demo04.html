@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload = function(){//页面加载完成事件
+		changeSize();
+	}
+	onresize = function(){//窗口尺寸改变事件
+		changeSize();
+	}
+	function changeSize(){
+		//得到窗口宽高
+		var w = document.body.parentElement.clientWidth;
+		var h = document.body.parentElement.clientHeight;
+		//把宽高的值给到 html                              100px 200px
+		document.body.parentElement.style.backgroundSize
+											= w+"px "+h+"px";
+	}
+</script>
+<style type="text/css">
+	html{
+		background-image: url("../imgs/k.jpg");
+		background-repeat: no-repeat;
+		 
+	}
+</style>
+</head>
+<body>
+
+</body>
+</html>

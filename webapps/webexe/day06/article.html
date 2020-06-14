@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form表单和服务表单</title>
+<style type="text/css">
+#container {
+	width: 100%;
+	height: 800px;
+	margin: 0 auto;
+	border: 2px solid #ddd;
+	background-image: url(../images/regist.png);
+	background-repeat: no-repeat;
+}
+
+#form_panel {
+    overflow:hidden;
+	width: 280px;
+	height: 290px;
+	background-color: rgba(0, 0, 0, 0.3);
+	float: right;
+	margin: 120px 120px 0 0;
+}
+ #form_top{
+  overflow:hidden;
+  border-bottom:2px solid white;
+  dispaly:inline-block;
+
+}
+#form_panel div a{
+  float:right;
+  position:relative;
+  margin:20px 5px 0 0;
+  text-decoration: none;
+  color:white;
+ 
+}
+#form_panel div h2{
+  color:white;
+  float:left;
+  font-size: 20px;
+  font-weight: lighter;
+  margin:17px 0 0 6px;
+}
+
+.form_field{
+  position: relative;
+
+}
+.form_field input{
+   margin:10px 0 0 10px;
+   padding:8px;
+   width:240px;
+   height:23px;
+}
+
+.form_field img{
+ position:absolute;
+ float:right;
+ right:28px;
+ top:15px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+	<div id="container">
+		<div id="form_panel">
+			<div id="form_top">
+				<h2>登录学子商城</h2>
+				<a href="#">新用户注册</a>
+			</div>
+			<div class="form_field">
+				<input type="text" placeholder="请输入你的用户名">
+				<img src="../images/login/yhm.png">
+				<span>用户名不能为空</span>
+            </div>
+			<div  class="form_field">
+				<input type="password" placeholder="请输入你的密码"> 
+				<img src="../images/login/mm.png">
+				 <span>密码不能为空</span>
+			</div>
+			<div>
+				<input type="checkbox">自动登录 <a href="#">忘记密码？</a>
+			</div>
+			<div>
+				<input type="submit" value="登录">
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

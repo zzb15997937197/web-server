@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>伪类选择器2</title>
+
+<script src="my.js"type="text/javascript"></script>
+
+<style type="text/css">
+   input{
+    border:1px splid #ddd
+   }
+   /* 设置输入框获得焦点时候的效果*/
+   input:focus{
+   border:1px solid blue;
+   background-color:yellow;
+   }
+   
+   .btn{
+     border:2px outset #ddd;/* 凸起边框*/
+     background-color:#f0f;
+     text-align:center;
+     cursor:pointer;/* 设置鼠标箭头*/
+     width:150px
+   }
+   /* */
+   .btn:active{
+     border:2px inset #ddd;
+      color:red;
+      background-color:#f0f
+   }
+</style>
+</head>
+<body>
+ 
+  <h1>伪类选择器2</h1>
+  <h2>表单</h2>
+  
+  <div>
+    <label>用户</label>
+    <input type="text">
+  </div>
+  
+  <div>
+    <label>年龄</label>
+    <input type="text">
+  </div>
+  <div>
+  <label>按钮</label>
+  <input type="button" class="btn" value="点击" onclick="alert('hello world');">
+  <label>登录</label>
+  <input type="button" class="btn" value="登录" onclick="method2()">
+  </div>
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>浮动的影响</title>
+<style type="text/css">
+#big {
+	width: 300px;
+	border: 2px solid red;
+	/*如果所有子元素浮动，父元素能时识别的高度为0，通过以下代码来
+  解决此问题，overflow:hidden*/
+	overflow: hidden;
+}
+
+#d1, #d2, #d3 {
+	width: 100px;
+	border: 1px solid blue;
+	float: left;
+}
+
+#d1 {
+	height: 101px;
+}
+
+#d2, #d3 {
+	height: 100px;
+}
+</style>
+
+</head>
+<body>
+	<div id="big">
+		<div id="d1">div1</div>
+		<div id="d2">div2</div>
+		<div id="d3">div3</div>
+	</div>
+
+
+</body>
+</html>

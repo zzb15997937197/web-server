@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>java script自定义排序</title>
+
+<script type="text/javascript">
+
+  function fn(){
+	  //自定义排序
+	  var arr=[1,5,7,6,57,1,8,26,45,78];
+	  alert(arr.sort(mysort));
+ }
+  
+  function mysort(a,b){
+	  return a-b;
+  }
+
+</script>
+
+</head>
+<body>
+
+     <input type="text" id="ip1">
+     <br>
+     <input type="button" value="排序" onclick="fn()">
+    
+
+</body>
+</html>

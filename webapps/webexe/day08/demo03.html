@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+  /*
+   创建正则的两种方式：
+   1、通过//的形式创建 第一个/是正则的规则 第二个/是正则的代表模式
+   2、模式包括：i表示忽略大小写，g表示全局查找
+   var regex=/^a/i;//以a开头，忽略大小写
+   var regex=/m&/i;//以小写m结尾，忽略大小写
+   var regex=/^\d{2}$/;//任意两位数字，加上^和$表示只有两位数字
+   var reg=/^m\d{3,5}c$/;//以m开头,c结尾，m和c之间有3-5位数字
+   var reg=/^\w{6,10}$/;//必须6-10位数字、字母、下划线的正则，需加上^和$
+    第二种创建正则表达式的方式：
+     var reg2=new RegExp("^a","i");
+   var reg2=new RegExp("^\\w{6,10}$");// \需要转义，则需要再加一个\
+   //参数为模式，可以省略。
+   3、应用场景：为了查找内容，校验文本。
+   
+   //正则相关函数
+   1、查找内容
+   2、var str="you can you up,no can no bb"
+   
+  */
+  var str="you can you up,no can no bb";
+  var reg=/no/g;//查找no的正则表达式
+ /*  alert(reg.exec(str));//no 找到第一个
+  alert(reg.exec(str));//no 找到第二个
+  alert(reg.exec(str));//null 没有了 */
+  var reg1=/^You/i;
+  alert(reg1.test(str));
+  //和字符串相关的正则函数
+  //1、查找内容  ,当字符串调用.match()方法时，匹配到所有与正则表达式相关的串是返回的是一个数组，查找到所有的内容
+  alert(str.match(reg));
+  //查找并替换
+  alert(str.replace(reg,"**"));
+  var reg2=/you/;
+  alert(str.replace(reg2,"*"));
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商品、购物车</title>
+<style type="text/css">
+
+body{
+ width:1000px;
+ text-align: center;
+}
+table{
+ width:60%;
+ margin:0 auto;
+ border:1px solid #111;
+ /*合并表格边框和单元格边框*/
+ border-collapse: collapse;
+}
+
+tr>td,th{
+  width:30px;
+  border:1px solid #111;
+ }
+h1{
+ font-weight: lighter;
+}
+
+#total{
+ text-align: right;
+}
+
+
+</style>
+
+<script type="text/javascript" src="../jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+   
+   
+    function addshop(btn){
+        	//怎么区分加入购物车更好的方式
+        console.log( $($("input[value='加入购物车']")[0]));
+        	
+         var obj=event.target;
+         //通过按钮事件源得到他爸(td)再得到他爸的兄弟们
+         var name=$(btn).parent().siblings().eq(0).text();//得到商品名称
+         var price=$(btn).parent().siblings().eq(1).text();
+         //console.log("name:"+name+"price:"+price+"sum:"+sum+"good:"+good);
+        //创建tr和td
+        var tr=$("<tr></tr>");
+        var nametd=$("<td>"+name+"</td>");
+        
+        //单价
+        var pricetd=$("<td>"+price+"</td>");
+        //数量
+        var counttd=$("<td><input type='button'value='-' onclick='countfn(-1)'><span>1</span><input type='button'value='+' onclick='countfn(1)'></td>");
+        //金额
+        var moneytd=$("<td>"+price+"</td>");
+        var deltd=$("<td><input type='button' value='删除' onclick='delfn(this)'></td>");
+        tr.append(nametd,pricetd,counttd,moneytd,deltd);
+         
+        //判断在第一个表中商品名称只能出现一次
+        //添加到id为total的元素之前
+        //获取到第二张表的商品单价
+        //console.log(name);
+        var trlength=$("#total").siblings("tr").length;
+        for(var i=0;i<$("#total").siblings("tr").length;i++){
+            var tr_name=$("#total").siblings("tr").eq(i).children().eq(0).text();//获取到购物车表的第i条tr
+            console.log("第二张表商品名:"+tr_name+" 第一张表商品名:"+name);
+            if(name==tr_name){
+            	
+                return;
+            }
+            //让购物车的物品数量加1，判断，如果加入的商品的信息在购物车里面有，则让数量增加，否则添加到购物车表
+        }
+        $("#total").before(tr);
+        
+        //获取到产品在第二个表最后一行的名字
+        caltotalfn();
+    }
+  
+ 
+ 
+ 
+ //数量加减方法,这边数量加，对应的商品库存也要减多少
+ function countfn(x){
+      //取出原来的数值
+    var obj=event.target;//注意兼容性
+     var count=$(obj).siblings("span").text();//得到input标签的兄弟元素span
+     count=parseInt(count);
+     count+=x;
+    /*  if(count<=0){
+         $(obj).parent().parent().remove();
+     } */
+     if(count==0){
+         count=1;
+     }
+     /* 
+     if(count>=0){
+         return;//数量减到1的时候，
+     }
+     */
+     $(obj).siblings("span").text(count);
+   //得到单价,根据父亲的哥哥得到价格
+    var price=$(obj).parent().prev().text();
+     //给金额td赋值，根据父亲的弟弟得到价格
+     
+     
+     //计算金额
+     $(obj).parent().next().text(price*count);
+      //计算总价
+     caltotalfn();
+  }
+  
+  
+  
+  //计算总加
+  function caltotalfn(){
+    //选到第一个table里面所有的tr
+    var total=0;
+     $("table:eq(1) tr").each(function(){
+       //得到tr里面第四个td
+       var money=parseInt($(this).children().eq(3).text());
+       if(money){
+           //NaN转布尔值为false
+           total+=money;
+         }
+      });
+     
+     $("#total td").text("总价："+total+"元");
+  }
+  
+ //删除行方法
+ function delfn(btn){
+      $(btn).parent().parent().remove();
+      caltotalfn();
+ }
+ 
+ 
+ 
+
+ 
+
+   
+</script>
+</head>
+<body>
+ <h1>特价商品</h1>
+<table id="table1">
+<tr><th>商品名称</th><th>商品单价</th><th>库存</th><th>好评率</th><th>操作</th></tr>
+<tr><td>鼠标</td><td>50</td><td>100</td><td>92</td><td><input type="button" value="加入购物车"  onclick="addshop(this)"></td></tr>
+<tr><td>键盘</td><td>120</td><td>30</td><td>95</td><td><input type="button" value="加入购物车" onclick="addshop(this)"></td></tr>
+<tr><td>苹果电脑</td><td>6888</td> <td>10</td><td>98</td><td><input type="button" value="加入购物车"onclick="addshop(this)" ></td></tr>
+<tr><td>华为手机</td><td>5888</td><td>1000</td><td>95</td><td><input type="button" value="加入购物车" onclick="addshop(this)"></td></tr>
+<tr><td colspan="5">总价:0</td></tr>
+</table>
+
+
+<h1>购物车</h1>
+<table  id="table2">
+<tr><th>商品名称</th><th>商品单价</th><th>数量</th><th>金额</th><th>操作</th></tr>
+<tr id="total"><td colspan="5">总价:0</td></tr>
+</table>
+
+
+</body>
+</html>

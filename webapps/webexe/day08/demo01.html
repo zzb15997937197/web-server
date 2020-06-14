@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function fn() {
+		var input1 = document.getElementById("ip1");
+		var input2 = document.getElementById("ip2");
+		var text1 = input1.value;//获取文本框1里面的内容，可以拆分的内容
+		var regex = input2.value;//获取
+		var names = text1.split(regex);
+		alert(names);
+		for (var i = 0; i < names.length; i++) {
+			var value = names[i];
+			var s = "<h[c]>text</h[c]>"
+			s = s.replace("[c]", i + 1);
+			s = s.replace("text", value);
+			document.body.innerHTML += s;
+		}
+	}
+</script>
+</head>
+
+<body>
+	<input type="text" placeholder="请输入一个可拆分的字符串" id="ip1">
+	<br>
+	<input type="text" placeholder="请输入拆分条件" id="ip2">
+	<br>
+	<input type="button" value="拆分" onclick="fn()">
+</body>
+</html>

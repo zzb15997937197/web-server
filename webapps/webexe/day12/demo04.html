@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" 
+src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input[value='添加']").click(function(){
+			var str = $("input[type='text']").val();
+			//创建li元素
+			var li = $("<li>"+str+"</li>");
+			//$("ul").prepend(li);//前面添加
+			$("ul").append(li);//后面添加
+			
+		});
+		
+		$("input[value='插入']").click(function(){
+			var str = $("input[type='text']").val();
+			//创建li元素
+			var li = $("<li>"+str+"</li>");
+			//$("#sh").before(li);//上面
+			$("#sh").after(li);//下面
+		});
+		$("input[value='删除']").click(function(){
+			//得到用户输入的内容
+			var str = $("input[type='text']").val();
+			//得到包含用户输入内容的li将其删除
+			 $("li:contains('"+str+"')").remove();
+		});
+	})
+</script>
+</head>
+<body>
+<input type="text" placeholder="请输入城市名称">
+<input type="button" value="添加">
+<input type="button" value="插入">
+<input type="button" value="删除">
+<ul>
+	<li>北京</li>
+	<li id="sh">上海</li>
+	<li>广州</li>
+</ul>
+</body>
+</html>
+
+
+
+

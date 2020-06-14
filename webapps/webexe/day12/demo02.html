@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 此标签中不能再写js代码 -->
+<script type="text/javascript" 
+src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	/* onload = function(){
+	} */
+	/* 复杂版 */
+	/* $(document).ready(function(){
+	}); */
+	/* 简单版 */
+	$(function(){
+		//alert("jquery引入成功！");
+		//给按钮绑定事件
+		$("#mybtn").click(function(){
+			alert("绑定成功！"); 
+		})
+	});
+</script>
+</head>
+<body>
+<input type="button" id="mybtn" value="点我试试！">
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>背景滚动、固定</title>
+<style type="text/css">
+/*背景附加方式
+ 大多数是在body使用,很少在其他标签上使用
+ background-attachment:scroll,fixed
+ overflow:scroll
+ 
+*/
+body {
+	background-image: url("../images/regist.png");
+	background-attachment: fixed; /*背景固定*/
+	background-attachment:scroll;/*背景滚动*/
+	background-repeat:no-repeat;
+}
+
+.demo {
+	width: 1000px;
+	height: 800px;
+	overflow: scroll; /*背景图片滚动*/
+	/*	background-attachment:fixed;/*背景图片固定*/
+	/* 
+     scroll：背景滚动,背景图会随着内容的动而滚动
+     fixed:背景固定,内容滚动背景保持位置不变
+   */
+}
+</style>
+</head>
+<body>
+	<div class="demo">
+		测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br>
+		测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br>
+		测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br>
+		测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br>
+		测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br>
+		测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br> 测试内容<br>
+		测试内容<br> 测试内容<br>
+	</div>
+
+</body>
+</html>

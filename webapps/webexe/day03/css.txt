@@ -1,0 +1,39 @@
+
+
+4、派生选择器：利用元素层级关系选择元素，绑定样式
+
+-子孙后代选择
+  //选择ul中全部的子孙li元素
+   ul li{
+      color:red;
+     }
+   
+   
+-子选择 
+   ul>li>ul>li {color:#ddd}
+   
+伪类选择器：用于设置鼠标停留在元素上面的时候的显示效果
+ -鼠标悬停：#menu li:hover {color:#fff;background:#000}
+ 
+ 
+复合使用选择器：id,类，元素，伪类选择器可以组合使用
+
+常用的属性值：
+px 像素
+em 字体的大小，2个em表示两个字体大小
+% 百分比
+16进制的RGB
+
+
+p.error 选择p元素，其class="error"
+文本的缩进：
+  text-indent:2em;//段落首行缩进两个字体大小
+1、设置字体的大小
+  font-size:12px;
+2、line-height:行高
+   1.6em;
+3、设置文字颜色 
+  font-color:#aabbcc
+4、text-align:
+   对齐
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		border: 1px solid red;
+	}
+ 
+</style>
+<script type="text/javascript">
+	function downfn(){
+		console.log(event.keyCode
+				+":"+String.fromCharCode(event.keyCode));//讲字符串转换字符编码
+	}
+	function upfn(){
+		//获取键盘按键对应的十进制数值（字符编码）
+		console.log(event.keyCode
+				+":"+String.fromCharCode(event.keyCode));
+		if(event.keyCode==13){
+			alert("登录成功!");
+		}
+	}
+	
+	//给window添加尺寸改变事件
+	onresize = function(){
+		alert("尺寸改变了");
+	}
+</script>
+</head>
+<body>
+<input type="text" onkeydown="downfn()"
+onkeyup="upfn()">
+</body>
+</html>
+
+

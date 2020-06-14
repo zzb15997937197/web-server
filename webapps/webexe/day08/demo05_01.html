@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>客户端用户密码双重校验</title>
+ <script type="text/javascript">
+   var reg=new RegExp("^\\w{6,10}$");
+   function checkuser(){
+	   var text=ip1.value;
+	   if(reg.test(text)){
+		    s1.className="ok";
+		    return true;
+	   }else{
+		    s1.className="err";
+		    return false;
+		  }
+	  }
+   
+   function checkpsw(){
+	   var text=ip2.value;
+	   if(reg.test(text)){
+		     s2.className="ok";
+		     return true;
+	   }else{
+		     s2.className="err";
+		     return false;
+		  }
+	 }
+  
+ </script>
+
+
+<style type="text/css">
+ .ok{
+   display:none;
+ }
+ .err{
+   color:red;
+   display:inline;
+ }
+ 
+#form_panel>input{
+    cursor: pointer;
+ }
+
+</style>
+</head>
+<body>
+<!-- 
+  1、两个输入框，一个按钮
+  2、当鼠标移出输入框，不满足格式的在输入框旁边显示"格式错误"的红色样式
+  3、用登录按钮进行校验,如果满足格式提交表单，如果不满足则不能提交，报红
+ -->
+ <form action="http://doc.tedu.cn" onsubmit="return checkuser()+checkpsw()==2" id="form_panel">
+  用户名:<input type="text" placeholder="请输入用户名" id="ip1" onblur="checkuser()">
+  <span  id="s1" class="ok">格式有误！</span> 
+  <br>
+  密码:<input type="text" placeholder="请输入密码" id="ip2" onblur="checkpsw()">
+  <span id="s2" class="ok">格式有误！</span>
+  <br>
+  <input type="submit" value="登录">
+ </form>
+</body>
+</html>

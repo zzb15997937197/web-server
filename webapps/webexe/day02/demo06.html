@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Thead,Tbody,Tfoot</title>
+</head>
+<body>
+ <!-- th表头和td的区别就是th里面的内容会字体加粗
+      caption:表头，自动显示在thead上方，并处
+       在中间位置。
+ -->
+	<table border="1" cellspacing="0" cellpadding="10">
+		<caption>订单列表</caption>
+		<!-- 表格的标题，会自动居中在表格的正上方 -->
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>商品名称</th>
+				<th>商品价格</th>
+				<th>商品介绍</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>鼠标</td>
+				<td>15元</td>
+				<td>电竞专用</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>键盘</td>
+				<td>50元</td>
+				<td>罗技吃鸡</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>音响</td>
+				<td>60元</td>
+				<td>杜比音质</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>耳机</td>
+				<td>40元</td>
+				<td>立体音效</td>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4" align="right">合计：165元</td>
+			</tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>

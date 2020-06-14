@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html onmousedown="downfn()" onmousemove="movefn()">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		margin: 100px 0 0 100px;
+	}
+	body{
+		border: 1px solid red;
+	}
+	img{
+		width: 50px;
+		height: 50px;
+		position: absolute;
+	}
+</style>
+<script type="text/javascript">
+	function downfn(){
+		console.log("鼠标按下了 x="+event.clientX
+				+" y="+event.clientY); 
+		//创建img元素
+		var img = document.createElement("img");
+		img.src = "../imgs/2.gif";
+		img.style.left = event.clientX+"px";
+		img.style.top = event.clientY+"px";
+		document.body.appendChild(img);
+	}
+	function upfn(){
+		console.log("鼠标抬起了"); 
+	}
+	function movefn(){
+		console.log("鼠标移动了"); 
+		//创建img元素
+		var img = document.createElement("img");
+		img.src = "../imgs/2.gif";
+		img.style.left = event.clientX+"px";
+		img.style.top = event.clientY+"px";
+		document.body.appendChild(img);
+	}
+	
+	/* 随机位置添加图片 */
+	setInterval(function(){
+		var x = Math.floor(Math.random()*1000);
+		var y = Math.floor(Math.random()*1000);
+		var img = document.createElement("img");
+		img.src = "../imgs/2.gif";
+		img.style.left = x+"px";
+		img.style.top = y+"px";
+		document.body.appendChild(img);//往body里面添加孩子元素
+	},10);
+	
+	
+	
+</script>
+</head>
+<body >
+<div onmouseup="upfn()">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script type="text/javascript">
+ //图片的下表随机滚动
+   
+	//图片移动后
+  setInterval(function(){
+	  var elements=document.getElementsByTagName("img");
+	  var left_img1=img1.style.left;
+	  var left_img2=img2.style.left;
+	  var left_img3=img3.style.left;
+	  elements[0].style.left=img1.style.left+"50px";
+	 
+	 // elements[2].style.left=img3.style.left+"50px";
+	
+  },500);
+
+
+</script>
+<style type="text/css">
+
+
+#d1{
+ margin:0 auto;
+}
+#d1>img{
+ width:200px;
+ height:200px;
+
+}
+
+#img1{
+position:absolute;
+  left:0px;
+  top:20px;
+
+}
+
+#img2{
+position:absolute;
+  left:250px;
+  top:20px;
+}
+
+#img3{
+position:absolute;
+  left:500px;
+  top:20px;
+
+}
+</style>
+</head>
+<body>
+<!-- 用定时器实现图片轮播功能 -->
+
+<div id="d1">
+ 
+  <img alt="" src="../../images/product_img.png" id="img1">
+  <img alt="" src="../../images/product_img1.png" id="img2">
+  <img alt="" src="../../images/product_img2.png" id="img3">  
+</div>
+</body>
+</html>

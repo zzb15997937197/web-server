@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#top{
+    color:blue;
+    font-size:20px;
+  }
+
+ .important{
+   color:blue;
+ }
+  #p{
+  font-style: italic;
+  color:red;
+  }
+  body {
+  font-family:'微软雅黑';
+  background-image:url(../myweb/regist.png);
+  background-repeat:no-repeat;
+ }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>左浮动演示</title>
+</head>
+
+<style type="text/css">
+.d1, .d2, .d3 {
+	border: 2px solid #0ff;
+	width: 100px;
+	height: 50px;
+}
+
+.root {
+	width: 500px;
+}
+
+.d1 {
+	float: left;
+}
+
+.d2 {
+	float: left;
+}
+/* 如果排不下去了，就另起一行接着排*/
+.d3 {
+	float: left;
+}
+</style>
+
+<body>
+	<h1>左浮动演示</h1>
+	<div class="root">
+		<div class="d1">d1</div>
+		<div class="d2">d2</div>
+		<div class="d3">d3</div>
+	</div>
+
+</body>
+</html>

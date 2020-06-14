@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片标签img</title>
+</head>
+<body>
+<!-- 当图片不能正常显示的时候显示此内容 -->
+<!-- 如果只设置宽度，高度会等比缩放 -->
+<img title="美女" alt="在下一级目录加载" src="abc/regist.png" width="100px" height="100px">
+<img title="大美女" alt="在上级目录加载" src="../regist.png" width="50%"><!--在1806web目录下 -->
+<img title="美女"alt="在本级目录加载" src="regist.png">
+<img title="巨漂亮"alt="访问文件夹里面的" src="../images/regist.png">
+<!-- 
+ --src:图片路径
+ 1、相对路径：
+   a、regist.png
+   b、图片在页面的上级目录,../regist.png,上两级目录../../regist.png
+   c、图片在页面的下级目录,abc/a.jpg
+ 2、绝对路径：
+    通常以http开头，访问站外资源使用绝对路径
+    目标图片路径发生改变，则不能正常显示
+ -->
+ <img title="王宇" src="http://cdn.tmooc.cn/bsfile//imgad///6A21088B7273432D9E86BC8D90FCF4DC.jpg">
+<!-- 支持图片格式：jpg/jpeg 不支持透明色 png支持透明色 gif动态图 -->
+<!-- title悬停式显示的内容 -->
+<!--  width/height 值为像素px -->
+
+</body>
+</html>

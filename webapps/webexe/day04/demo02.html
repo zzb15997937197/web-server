@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>溢出内容属性</title>
+<style type="text/css">
+/*选择器组,将共同的属性行为放在选择器组里面*/
+.c1, .c2, .c3, .c4 {
+	border: 1px solid #00f;
+	margin: 10px;
+}
+
+.c2, .c3 {
+	/*设置共同的属性为用选择器组来设置*/
+	width: 100px;
+	height: 80px;
+}
+
+.c3 {
+	overflow: hidden; /*溢出内容显示隐藏起来,改变页面的大小，c3的属性会随着页面的大小变动
+  里面的内容会随着变动*/
+	overflow: hidden; /*将溢出的内容隐藏起来*/
+}
+
+.c4 {
+	width: 200px;
+	height: 100px;
+	/*overflow:scroll;/*显示滚动条,无论内容是否溢出*/
+	/*overflow:auto;/*根据内容自动控制是否显示滚动条*/
+	overflow: auto; /*当内容在显示出来的框放不下的时候显示滚动条，放的下的话就不使用滚动条*/
+}
+
+.c5 {
+	width: 800px;
+	height: 600px;
+	border: 1px solid #eee;
+	overflow: scroll;
+}
+</style>
+</head>
+<body>
+	<h1>溢出内容属性</h1>
+	<div class="c1">陈辰每天早上在厕所会干一件大事情</div>
+	<div class="c2">设置陈辰的大小</div>
+	<div class="c3">陈辰的大小会随着鼠标滚轮的变大变小</div>
+	<div class="c4">陈辰永不言弃，陈辰的每一天都是充满希望的一天～！陈辰每天早上在厕所会干一件大事情！陈辰的大小会随着鼠标滚轮的变大变小！</div>
+	<div class="c5">
+		<img src="../images/a.jpg">
+	</div>
+
+</body>
+</html>

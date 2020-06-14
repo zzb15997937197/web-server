@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录页面</title>
+<style type="text/css">
+  
+</style>
+</head>
+
+<body background="./regist.png">
+<!-- 
+   form表单是用来将页面中用户输入的内容提交给服务端使用的标签。
+   需要注意，只有在form表单中的<input>域内容才会被提交到服务端
+   
+   form有两个重要的属性：
+   method:指定提交表单的形式，默认为GET.可选(GET,POST)
+   action:表单提交的路径 
+   http://localhost:8088/myweb/reg.html
+   http://localhost:8088/myweb/reg
+   
+   注意：表单中所有的<input>标签必须要指定name属性，否则该输入
+   域的内容在提交时会被忽略。
+   
+   提交表单有专门的提交按钮，type类型为submit。
+
+ 
+ -->
+<form action="reg" method="post">
+  <center>
+     <h1>欢迎注册！</h1>
+     <table border="1">
+           <tr>
+             <td>用户名：</td>
+             <td><Input type="text"  name="username" size="20"></td>
+           </tr>
+         <tr> 
+              <td align="right">密码:</td>
+              <td><Input type="password"  name="password" size="20" align="left"/></br></td>
+          </tr>
+          <tr> 
+              <td align="right">
+                  昵称:
+              </td>
+              <td>
+              <Input type="text" name="nickname"size="20"align="left"/>
+              </td>
+          </tr>
+          <tr> 
+              <td align="right">年龄:
+              </td>
+              <td><Input type="text" name="age" size="20" align="left"/>
+              </td>
+          </tr>
+          <tr> 
+          <!-- 注册按钮跨两列表格,用属性colspan="2" align="center" -->
+              <td colspan="2" align="center">
+                 <Input type="submit" width="20" value="注册"/>
+              </td>
+          </tr>
+     </table>
+     </center>
+
+</form>
+   <h2>已经有账户<a href="login.html">点击登录！</a></h2>
+     
+
+</body>
+</html>

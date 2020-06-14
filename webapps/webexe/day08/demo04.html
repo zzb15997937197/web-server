@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.ok {
+	color: green;
+}
+
+.err {
+	color: red;
+}
+</style>
+<script type="text/javascript">
+	function fn() {
+		/*   var input1=document.getElementById("ip1");
+		 var input2=document.getElementById("ip2");
+		 var s1=document.getElementById("s1");
+		 var s2=document.getElementById("s2"); */
+		var text1 = ip1.value;
+		var text2 = ip2.value;
+		var reg = /^\w{6,10}$/;
+		var reg=new RegExp("^\\w{6,10}$");
+		if (reg.test(text1)) {
+			s1.className = "ok";
+		} else {
+			s1.className = "err";
+		}
+		if (reg.test(text2)) {
+			s2.className = "ok";
+		} else {
+			s2.className = "err";
+		}
+	}
+	//如果文本框里
+</script>
+
+
+</head>
+<!-- 元素对象.className="ok/err"; -->
+<body>
+
+	<input type="text" placeholder="用户名" id="ip1">
+	<span id="s1">请输入6-10位数字字母下划线</span>
+	<input type="text" placeholder="密码" id="ip2">
+	<span id="s2">请输入6-10位的数字字母下划线</span>
+	<br>
+	<input type="button" value="校验" onclick="fn()" >
+
+</body>
+</html>

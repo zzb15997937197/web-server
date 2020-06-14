@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>拆分字符串</title>
+
+ <script type="text/javascript">
+ 
+   function fn(){
+	   //将字符串拆分后显示在下面的div里面
+	   var text1=ip1.value;
+	   var reg=ip2.value;
+	   var names=text1.split(reg);
+	   for(var i=0;i<names.length;i++){
+		   //将每个串显示,第一个串用h1字体显示，第二个串用h2字体显示
+		   var name=names[i];
+		   document.body.innerHTML+="<h"+(i+1)+">"+name+"</h"+(i+1)+">";
+		   
+		  
+	   }
+	   
+	   
+   }
+ 
+ </script>
+
+
+</head>
+<body>
+
+   <input type="text" id="ip1">
+   <br>
+   <input type="text" id="ip2">
+   <br>
+   <input type="button" value="拆分" onclick="fn()">
+   <div id="d1">
+   
+   
+   </div>
+   
+   
+   
+   
+
+</body>
+</html>

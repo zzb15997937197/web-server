@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录页面</title>
+<style type="text/css">
+html {
+	background-color: #27b0f6;
+}
+
+body {
+	font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+	margin: 0px; /*去掉默认的外边框*/
+}
+
+header {
+	overflow: hidden;
+}
+
+header img {
+	float: left;
+	margin: 10px 0 0 20px;
+}
+
+header h1 {
+	float: left;
+	vertical-align: baseline;
+	font-size: 24px;
+	font-weight: normal;
+	margin: 18px 0 0 18px;
+}
+
+#form_div {
+	width: 100%;
+	height: 560px;
+	background-image: url("../images/regist.png");
+	background-repeat: no-repeat;
+}
+
+#form_panel {
+	width: 264px;
+	height: 300px;
+	padding: 8px;
+	float: right;
+	margin: 120px 111px 0 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	border: 2px solid #red;
+	color:white;/*给后代元素们设置颜色*/
+	
+}
+
+#form_panel h2 {
+	font-size: 17px;
+	border-bottom: 1px solid white;
+	margin:0;
+	padding:8px;
+}
+
+#form_panel>h2>a {
+   /*新用户注册*/
+	font-size: 15px;
+	color: white;
+	margin-right:0px;
+	position: relative;
+	left: 60px;
+	text-decoration: none;
+}
+
+.field{
+/*用样式统一复用*/
+   position:relative;/*父元素不脱离文档流，为图片起到位置参考的作用*/
+   margin:15px 0;
+}
+
+.field input{
+ width:222px;
+ border:0px;
+ padding:10px 20px;
+ 
+}
+
+.field span{
+  color:red;
+}
+
+.field img{
+  position:absolute;
+  /*使用绝对定位，定位到右上角*/
+  top:6px;
+  right:10px;
+}
+
+#autologin{
+  color:white;
+}
+
+#autologin>input{
+  position:relative;
+  top:2px;
+}
+
+#autologin>a{
+   float:right;
+   color:white;
+   text-decoration: none;
+}
+
+
+#login{
+ margin:10px 0;
+ 
+}
+#login input{
+  width:262px;
+  height:35px;
+  text-align: center;
+  background-color:#27b0f6;
+  text-line:20px;
+  color:white;
+  font-weight:lighter;
+  font-size:20px;
+  border:0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+	<div class="top">
+		<header>
+			<img src="../images/header/logo.png" >
+			<h1>欢迎登录</h1>
+		</header>
+
+		<article>
+			<!-- 表单部分 -->
+			<div id="form_div">
+				<div id="form_panel">
+					<h2>
+						登录学子商城 <a href="#" >新用户注册</a>
+					</h2>
+					<div class="field">
+						<input type="text" placeholder="请输入用户名"> <img alt="" src=""> 
+						<img alt="" src="../images/login/yhm.png">
+						<span>用户名不能为空</span>
+					</div>
+					<div class="field">
+						<input type="password" placeholder="请输入密码"> <img alt="" src=""> 
+						<img alt="" src="../images/login/mm.png">
+						<span>密码不能为空</span>
+					</div>
+					<div id="autologin">
+						<input type="checkbox"> <label>自动登录</label> <a href="#">忘记密码</a>
+					</div>
+
+					<div id="login">
+						<input type="submit" value="登录">
+					</div>
+				</div>
+
+			</div>
+		</article>
+
+	</div>
+
+</body>
+</html>

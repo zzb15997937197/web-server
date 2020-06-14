@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>消除浮动影响</title>
+<style type="text/css">
+.menu div {
+	width: 80px;
+	height: 40px;
+	text-align: center;
+	background-color: #eee;
+	float: left; /*向左浮动*/
+	border: 1px solid;
+	margin: 5px;
+}
+
+.menu {
+	border: 1px solid;
+}
+</style>
+
+</head>
+
+<body>
+
+	<h1>消除浮动影响</h1>
+	<div class="menu">
+		<div class="item">HOME</div>
+		<div class="item">关于我们</div>
+		<div style="clear: both;"></div>
+	</div>
+	<h2>知乎</h2>
+	<p>没事看看热点，新闻，娱乐，游戏， 没事看看热点，新闻，娱乐，游戏 没事看看热点，新闻，娱乐，游戏 没事看看热点，新闻，娱乐，游戏
+		没事看看热点，新闻，娱乐，游戏 没事看看热点，新闻，娱乐，游戏</p>
+</body>
+</html>

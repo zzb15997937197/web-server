@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn1(btn){
+			//此时btn为事件源对象 
+		 	alert(" 元素绑定成功！"+event.srcElement.nodeName);
+	}
+	onload = function(){
+		mybtn.onclick = function(){
+			alert("动态绑定成功！"+this);
+		}
+	}
+	
+</script>
+</head>
+<body>
+<input type="button" value="元素绑定事件" 
+	onclick="fn1(this)">
+<input id="mybtn" type="button" value="动态绑定事件">
+</body>
+</html>
+
+

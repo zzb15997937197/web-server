@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+ .ok{
+    display:none;
+    color:green;/*不显示*/
+ }
+ .err{
+  display:inline;/*行内元素*/
+  color:red;
+ }
+ 
+</style>
+
+<script type="text/javascript">
+  
+  var reg=new RegExp("^\\w{6,10}$");
+  function checkuser(){
+	  var text1=ip1.value;
+	  if(reg.test(text1)){
+		  s1.className="ok";
+		  return true;
+	  }else{
+		  s1.className="err";
+		  return false;
+	  } 
+	 
+}
+  function checkpsw(){
+	  var text2=ip2.value;
+	  if(reg.test(text2)){
+		  s2.className="ok";
+		  return true;
+	  }else{
+		  s2.className="err";
+		  return false;
+	 } 
+  }
+
+</script>
+
+</head>
+<body>
+  <!-- 
+   实现双重校验，光标移开文本框的时候自动校验文本框的内容是否符合要求
+   如果符合要求就不显示，否则就显示格式错误
+   -->
+   <!-- onblur失去焦点事件 -->
+   <form action="http://doc.tedu.cn" onsubmit="return checkuser()+checkpsw()==2">
+   用户名：<input type="text" placeholder="请输入用户名" onblur="checkuser()" id="ip1">
+   <span id="s1" class="ok">格式错误</span>
+  <br>
+   密码： <input type="password" placeholder="请输入密码" onblur="checkpsw()" id="ip2">
+   <span id="s2" class="ok">格式错误</span>
+   <br>
+   <input type="submit" value="登录">
+   </form>
+
+
+</body>
+</html>

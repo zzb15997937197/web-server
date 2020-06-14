@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>相对定位和绝对定位</title>
+<style type="text/css">
+div {
+	border: 1px solid red;
+	width: 100px;
+	height: 100px;
+}
+
+#left {
+	background-image: url("../images/itemCat/study_computer_img1.png");
+	position: relative;
+	width: 611px;
+	height: 376px;
+	background-repeat: no-repeat;
+	background-size: 318px 319px;
+	background-position: 90% top; /*在右上角，第一个参数为左右调整，下一个参数为上下调整*/
+	background-color: yellow;
+	margin-top: 100px;
+	margin-left: 50px;
+}
+
+#d1 {
+	/*相对定位：相对于元素的初始位置,并没有脱离文档流*/
+	position: absolute;
+	left: 50px;
+	top: 200px;
+}
+
+#d2 {
+	position: fixed;
+	/*绝对定位上下左右值相对于窗口或相对于祖先元素中
+    做过非static元素
+   */
+	top: 0px;
+	left: 0px;
+}
+
+#d3 {
+	position: fixed;
+}
+</style>
+
+</head>
+
+
+<body>
+	<div id="father">
+		<div id="left">
+			<div id="d1">div1</div>
+			<div id="d2">div2</div>
+			<div id="d3">div3</div>
+		</div>
+		<div id="right"></div>
+	</div>
+</body>
+</html>

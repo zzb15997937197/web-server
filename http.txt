@@ -1,0 +1,113 @@
+http 协议----超文本传输协议
+
+http 协议是应用层协议，在互联网上广泛被使用，BS结构通讯的基础协议。
+浏览器与服务器之间就是使用http协议交互数据的，而http协议要求必须
+建立在可靠传输协议基础上进行的，所以底层的通讯协议必须使用TCP协议。
+
+http协议规定了客户端与服务器端之间传输的数据格式及内容，并且规定了两者
+之间的通讯方式。
+
+在http协议中要求的通讯方式为ie：一次请求一次响应。
+即：
+客户端主动连接服务器端并发起请求，服务端在收到请求后给予响应
+
+服务端永远不会主动连接客户端，也不会主动发送任何响应。
+
+Http常见的两个版本：1.0和1.1，现在基本都是使用Http1.1协议,1.0与1.1协议由一个比较
+明显的改动：
+
+1.0协议在通讯时，客户端与服务端建立一次TCP连接后，发送一次请求（Request），当服务端
+处理并给予响应的过程后再断开连接。(Response)在当今互联网应用中，这样的做法可以减少
+不小的系统开销并提高响应效率。
+
+Http协议中所有字符信息所使用的字符集为：ISO8859-1,该字符集是一个欧洲编码集，
+里面不含有中文等字符信息。所以HTPP协议中的字符信息部分不得出现如中文这样的字符
+一般只用字母，数字，符号。
+
+HTTP请求定义
+一个请求应当包含三部分：
+请求行，消息头，消息正文
+
+1：请求行
+请求行是由一行字符串组成的（以CRLF两个符号结尾表示一行结束）
+
+格式：
+method url protocol(CRLF)
+请求方式 请求资源路径 协议版本
+
+例：
+
+GET/index.html HTTP/1.1(CRLF)
+
+注：CR，LF是两个不可见的符号，在ASC编码中对应的数字为13，10
+CR：回车符 LF：换行符
+
+请求方式有两种：
+GET：地址栏请求，用户若传递消息则是直接拼在资源路径中的。
+POST：将用户传递的数据包含在消息正文中传递。
+
+GET / index.html HTTP/1.1(CRLF)
+
+
+2、消息头
+   消息头是由若干行构成，每一行为一个消息头，消息头是客户端通讯
+过程中传递给服务端的一些附加信息，比如有的用来告知服务端客户端
+的基本情况（浏览器内核，操作系统基本信息），有的是用来维持通讯
+过程的必要信息，有的是用来说明是否含有消息正文以及正文内容及长度
+等等。
+
+消息头格式：value(CRLF)
+    在最后一个消息头后面会单独跟一个CRLF，表示消息头部分结束。
+
+Host: localhost:8088(CRLF)
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0(CRLF)
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8(CRLF)
+Accept-Language: en-US,en;q=0.5(CRLF)
+Accept-Encoding: gzip, deflate(CRLF)
+Connection: keep-alive(CRLF)
+Upgrade-Insecure-Requests: 1(CRLF)(CRLF)//表示整个消息头的结束
+
+
+3、消息正文
+     一个请求中可以不包含消息正文部分，消息正文是二进制数据。
+ 是用户可以提交给服务端的数据。具体的消息正文有多少字节，这些
+ 字节表示的是什么类型的数据。可以根据该请求中的两个消息头：
+ Content-Type与Content-Length得知。
+ 
+ 
+一个请求的大致内容可包含：
+GET / HTTP/1.1
+Host: localhost:8088
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+状态行：
+  格式如下：
+  版本号 状态代码 状态描述 
+
+响应头：
+  响应头的格式与请求中的消息头的格式一样，由若干行组成，每行的格式为
+  name:value(CRLF)
+  并且最后一个响应头发送完毕后会单独发送一个CRLF表示响应头部分发送完毕。
+  响应头是服务端发送给客户端的附加消息。
+  
+响应正文：  
+   响应正文也是二进制数据，是服务端响应客户端所请求的资源数据
+   
+一个响应的大致内容如下：
+HTTP/1.1 200 OK(CRLF)//响应行
+Content-Type:text/html(CRLF)//告诉客户端我给你响应的是什么东西
+Content-Length:3452(CRLF)(CRLF)
+响应正文： 
+1010010101101010101010101010101010101....
+
+  
+
+
+
+
+
